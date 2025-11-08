@@ -101,6 +101,11 @@
     transform: scale(1.3);
 }
 
+#craps-roll-dice-animation-container {
+    margin-top: calc(var(--height-scale) * -0.16);
+    margin-left: calc(var(--height-scale) * -0.13);
+}
+
 .craps-betting-grid {
     display: grid;
     grid-template-columns: 33% auto 33%;
