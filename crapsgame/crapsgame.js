@@ -111,8 +111,6 @@ function formatDiceScale () {
     const heightScale = widthScale * 0.714
     const scale = heightScale / 438.11039999999997
     document.getElementById(crapsRollDiceAnimationContainer).style.transform = "scale(" + scale + ")"
-    alert(scale)
-
 }
 
 function processDiceResult (diceResult) {
