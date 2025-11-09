@@ -63,16 +63,21 @@ function hideMainGameSection () {
 }
 
 function setUpFirstRound () {
+    
+    setMoney (startingMoney)
+    setRounds(startingRounds)
+    betEven()
+    setUpNextRound ()
+}
+
+function setUpNextRound () {
     document.getElementById(crapsRollDiceAnimationContainer).style.display = "none"
     document.getElementById(crapsRoundFinishGridContainer).style.display = "none"
     document.getElementById(rollDiceButton).style.display = "block"
     document.getElementById(crapsBettingGridContainer).style.display = "block"
-    document.getElementById(crapsStatsUsername).innerHTML = crapsUsername
     canChangeBet = true
-    setMoney (startingMoney)
-    setRounds(startingRounds)
-    betEven()
     setBetAmount(minimumBet)
+
 }
 
 function setMoney (money) {
