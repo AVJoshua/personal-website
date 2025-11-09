@@ -179,11 +179,9 @@ function processDiceResult (diceResult) {
     setRounds(currentRounds + 1)
     let roundFinishMessage = ""
     if (diceSumResult === currentBet) {
-        // alert("YOU WIN")
         roundFinishMessage = "You WIN"
         setMoney(currentMoney + currentBetAmount)
     } else {
-        // alert("YOU LOSE")
         roundFinishMessage = "You LOSE :("
         setMoney(currentMoney - currentBetAmount)
     }
