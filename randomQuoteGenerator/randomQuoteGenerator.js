@@ -23,10 +23,7 @@ function randomNumber(array) {
 
 
 async function getNewRandomQuote () {
-    const response = await fetch("https://api.api-ninjas.com/v2/randomquotes?category=inspirational", {
-        method: "GET",
-        headers: {"X-api-key": apiKey}
-    })
+    const response = await fetch("https://api.quotable.io/quotes/random")
     if (!response.ok) {
         alert("There was a problem getting a new quote!")
     }

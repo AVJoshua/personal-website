@@ -30,4 +30,5 @@
 #new-random-quote:hover {
     cursor: pointer;
     font-weight: bolder;
+    background-color: rgba(0, 0, 0, 0.5);
 }
