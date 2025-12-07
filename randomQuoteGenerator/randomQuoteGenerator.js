@@ -22,30 +22,21 @@ function randomNumber(array) {
 
 
 
-function getNewRandomQuote () {
-    // Make a GET request to the Quotable API
-fetch("https://api.api-ninjas.com/v1/quotes", {
-    method: "GET", 
-    headers: {
-        "X-Api-Key": apiKey
-    }
-})
-  .then(response => {
+async function getNewRandomQuote () {
+    const response = await fetch("https://api.api-ninjas.com/v2/randomquotes?category=inspirational", {
+        method: "GET",
+        headers: {"X-api-key": apiKey}
+    })
     if (!response.ok) {
-      throw new Error("Network response was not ok " + response.statusText);
+        alert("There was a problem getting a new quote!")
     }
-    return response.json(); // Parse JSON response
-  })
-  .then(data => {
+    const data = await response.json()
+    console.log(data)
     let colorCombo = randomNumber(colors)
     document.getElementById("random-quote-generator").style.background = `linear-gradient(45deg, ${colorCombo[0]}, ${colorCombo[1]})`
     const quoteText = data[0].quote
     const quoteAuthor = data[0].author
     document.getElementById("random-quote-text").innerHTML = quoteText
     document.getElementById("random-quote-author").innerHTML = quoteAuthor
-  })
-  .catch(error => {
-    alert("There was a problem getting a new quote");
-  });
 
 }
