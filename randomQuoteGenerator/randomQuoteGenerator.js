@@ -31,7 +31,7 @@ async function getNewRandomQuote () {
     console.log(data)
     let colorCombo = randomNumber(colors)
     document.getElementById("random-quote-generator").style.background = `linear-gradient(45deg, ${colorCombo[0]}, ${colorCombo[1]})`
-    const quoteText = data[0].quote
+    const quoteText = data[0].content
     const quoteAuthor = data[0].author
     document.getElementById("random-quote-text").innerHTML = quoteText
     document.getElementById("random-quote-author").innerHTML = quoteAuthor
