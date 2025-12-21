@@ -16,14 +16,19 @@ const colors = [
 const apiKey = "jDrPRvhBbu66u9OZb1vHEQ==HdzosyIOBP267OqK"
 
 function randomNumber(array) {
-    const randomNumber = Math.floor(Math.random()  * array.length + 1)
+    const randomNumber = Math.floor(Math.random()  * array.length)
     return array[randomNumber]
 }
 
 
 
 async function getNewRandomQuote () {
-    const response = await fetch("https://api.quotable.io/quotes/random")
+    const response = await fetch("https://api.api-ninjas.com/v2/randomquotes?categories=success,wisdom", {
+        method: "GET",
+        headers: {
+            'X-Api-Key': apiKey,
+        }
+    })
     if (!response.ok) {
         alert("There was a problem getting a new quote!")
     }
@@ -31,7 +36,7 @@ async function getNewRandomQuote () {
     console.log(data)
     let colorCombo = randomNumber(colors)
     document.getElementById("random-quote-generator").style.background = `linear-gradient(45deg, ${colorCombo[0]}, ${colorCombo[1]})`
-    const quoteText = data[0].content
+    const quoteText = data[0].quote
     const quoteAuthor = data[0].author
     document.getElementById("random-quote-text").innerHTML = quoteText
     document.getElementById("random-quote-author").innerHTML = quoteAuthor

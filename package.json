@@ -1,0 +1,23 @@
+{
+  "name": "simvo-web",
+  "version": "1.0.0",
+  "description": "Personal Website",
+  "homepage": "https://github.com/AVJoshua/simvo-web#readme",
+  "bugs": {
+    "url": "https://github.com/AVJoshua/simvo-web/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AVJoshua/simvo-web.git"
+  },
+  "license": "ISC",
+  "author": "Joshua Akalihu",
+  "type": "commonjs",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "express": "^5.2.1"
+  }
+}
