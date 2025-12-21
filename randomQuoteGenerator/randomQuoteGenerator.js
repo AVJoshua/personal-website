@@ -1,3 +1,4 @@
+const apiKey="jDrPRvhBbu66u9OZb1vHEQ==HdzosyIOBP267OqK"
 const colors = [
     ["#FF8080", "#3d2202ff"],
     ["#FFF3DA", "#2f55d1ff"],
@@ -13,7 +14,7 @@ const colors = [
     ["#B97A95", "#1299ceff"]
 ]
 
-const apiKey = "jDrPRvhBbu66u9OZb1vHEQ==HdzosyIOBP267OqK"
+
 
 function randomNumber(array) {
     const randomNumber = Math.floor(Math.random()  * array.length)
