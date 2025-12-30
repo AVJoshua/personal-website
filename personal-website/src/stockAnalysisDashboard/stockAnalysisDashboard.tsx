@@ -1,6 +1,10 @@
 import { useState } from 'react'
 import { Oval } from 'react-loader-spinner'
-import { analyzeStock } from './stockAnalysisDashboard'
+import { analyzeStock,
+  VerticalAlignContainer,
+  VerticalAlignContent
+} from './stockAnalysisDashboard'
+import './stockAnalysisDashboard.css'
 
 function stockAnalysisDashboard() {
   const [stockData, setStockData] = useState()
@@ -29,45 +33,49 @@ function stockAnalysisDashboard() {
 
   if (gotData) {
     return (
-      <div>
-        <div onClick={() => goBack()}>Back</div>
-        <div>
-          {JSON.stringify(stockData)}
-        </div>
-      </div>
+      <VerticalAlignContainer>
+        <VerticalAlignContent>
+          <div onClick={() => goBack()}>Back</div>
+          <div>
+            {JSON.stringify(stockData)}
+          </div>
+        </VerticalAlignContent>
+      </VerticalAlignContainer>
     )
   }
 
   return (
-    <>
-      <div>
-				<div id="stock-analysis-dashboard-title">STOCK ANALYSIS DASHBOARD</div>
-				{isLoading ? (
-          <div>
-            <Oval
-              visible={true}
-              height="80"
-              width="80"
-              color="#4fa94d"
-              ariaLabel="oval-loading"
-              wrapperStyle={{}}
-              wrapperClass=""
-            />
-          </div>
-        ) : (
-          <div>
-            <div id="stock-analysis-dashboard-subtitle">
-              Put in a stock symbol you'd like to analyze (e.g. MSFT)
+    <VerticalAlignContainer>
+      <VerticalAlignContent>
+        <div>
+          <div id="stock-analysis-dashboard-title">STOCK ANALYSIS DASHBOARD</div>
+          {isLoading ? (
+            <div>
+              <Oval
+                visible={true}
+                height="80"
+                width="80"
+                color="#4fa94d"
+                ariaLabel="oval-loading"
+                wrapperStyle={{}}
+                wrapperClass=""
+              />
             </div>
-            <input
-              value={stockSymbol}
-              onChange={e => setStockSymbol(e.target.value)}
-            ></input>
-            <button className="stock-analysis-dashboard-button" onClick={() => runStockAnalysis()}>Analyze</button>
-          </div>
-        )}
-			</div>
-    </>
+          ) : (
+            <div>
+              <div id="stock-analysis-dashboard-subtitle">
+                Put in a stock symbol you'd like to analyze (e.g. MSFT)
+              </div>
+              <input
+                value={stockSymbol}
+                onChange={e => setStockSymbol(e.target.value)}
+              ></input>
+              <button className="stock-analysis-dashboard-button" onClick={() => runStockAnalysis()}>Analyze</button>
+            </div>
+          )}
+        </div>
+      </VerticalAlignContent>
+    </VerticalAlignContainer>
   )
 }
 
