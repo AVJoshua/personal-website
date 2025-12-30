@@ -5,6 +5,7 @@ import { analyzeStock,
   VerticalAlignContent
 } from './stockAnalysisDashboard'
 import './stockAnalysisDashboard.css'
+import DashboardGrid from './dashboardGrid'
 
 function stockAnalysisDashboard() {
   const [stockData, setStockData] = useState()
@@ -37,7 +38,10 @@ function stockAnalysisDashboard() {
         <VerticalAlignContent>
           <div onClick={() => goBack()}>Back</div>
           <div>
-            {JSON.stringify(stockData)}
+            <DashboardGrid
+              stockData={stockData}
+            ></DashboardGrid>
+            {/* {JSON.stringify(stockData)} */}
           </div>
         </VerticalAlignContent>
       </VerticalAlignContainer>
