@@ -4,6 +4,7 @@ import { GridStack } from 'gridstack';
 import {DashboardGridContent, PrimaryColor} from './stockAnalysisDashboard'
 import NumberStat from './numberStat'
 import LineChartContent from "./lineChartContent";
+import NewsList from "./newsLinks";
 
 function DashboardGrid({stockData}: {stockData: any}) {
   useEffect(() => {
@@ -63,6 +64,14 @@ function DashboardGrid({stockData}: {stockData: any}) {
             {stockData.futureEarningsDate.map((nextDate: string) => (
               <div style={{color: PrimaryColor}}>{nextDate}</div>
             ))}
+          </DashboardGridContent>
+        </div>
+        {/* Third Row */}
+         <div className="grid-stack-item" gs-w="5" gs-h="2">
+          <DashboardGridContent className="grid-stack-item-content">
+            <NewsList
+              newsLinks={stockData.newsArticle}
+            ></NewsList>
           </DashboardGridContent>
         </div>
       </div>
