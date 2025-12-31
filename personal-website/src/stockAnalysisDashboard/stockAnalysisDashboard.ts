@@ -19,9 +19,25 @@ export const VerticalAlignContainer = styled.div`
   width: 100%;
   height: 100%;
   display: table;
+  color: white;
 `
 
 export const VerticalAlignContent = styled.div`
   display: table-cell;
   vertical-align: middle;
+  // color: white;
+`
+
+export const DashboardGridContainer = styled.div`
+  width: 80%;
+  margin: 0 auto;
+  border: solid red 1px;
+  // color: white;
+`
+
+export const DashboardGridContent = styled.div`
+  background-color: wheat;
+  color: black;
+  border-radius: 5px;
+  padding: 15px
 `
