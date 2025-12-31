@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import 'gridstack/dist/gridstack.min.css';
 import { GridStack } from 'gridstack';
-import {DashboardGridContent} from './stockAnalysisDashboard'
+import {DashboardGridContent, PrimaryColor} from './stockAnalysisDashboard'
 import NumberStat from './numberStat'
 import LineChartContent from "./lineChartContent";
 
@@ -55,6 +55,14 @@ function DashboardGrid({stockData}: {stockData: any}) {
             <LineChartContent
               priceHistory={stockData.priceHistory}
             ></LineChartContent>
+          </DashboardGridContent>
+        </div>
+        <div className="grid-stack-item" gs-w="2" gs-h="2">
+          <DashboardGridContent className="grid-stack-item-content">
+            <div style={{marginBottom: '10px', color: PrimaryColor}}>Future Earnings</div>
+            {stockData.futureEarningsDate.map((nextDate: string) => (
+              <div style={{color: PrimaryColor}}>{nextDate}</div>
+            ))}
           </DashboardGridContent>
         </div>
       </div>
