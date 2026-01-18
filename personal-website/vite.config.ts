@@ -23,4 +23,9 @@ export default defineConfig({
       ],
     }),
   ],
+  server: {
+    allowedHosts: [ "jaclyn-brakeless-spectroscopically.ngrok-free.dev" ]
+  }
 })
+
+
