@@ -10,8 +10,8 @@ export async function analyzeStock(stockSymbolToAnalyze: string) {
   
   // Subnet
   // const url = "http://172.24.198.75:5000/analyze-stock/" + stockSymbolToAnalyze
-
-  const url = "https://test-analysis-tool-gaq1.onrender.com/analyze-stock/aapl" + stockSymbolToAnalyze
+  // const url = "https://text-analysis-tool.onrender.com/analyze-stock/" + stockSymbolToAnalyze
+  const url = "https://test-analysis-tool-gaq1.onrender.com/analyze-stock/" + stockSymbolToAnalyze
 
   const response = await fetch(url)
   if (!response.ok) {
